@@ -1,41 +1,81 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node dependencies
+/node_modules/
 
-# dependencies
-/node_modules
-/.pnp
+# Yarn / PNPM / NPM
 .pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+.pnpm-debug.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Next.js build output
+/.next/
+/out/
+/build/
 
-# vercel
-.vercel
+# SQLite Database
+db.sqlite3
+*.sqlite
+*.sqlite-journal
 
-# typescript
+# Drizzle ORM metadata
+src/db/drizzle/migrations/meta/
+
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Test coverage
+/coverage/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*
+
+# Permitir apenas o .env.example como modelo
+!.env.example
+
+# Vercel deployment folder
+.vercel/
+
+# Logs
+logs
+*.log
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Certificates / Private keys
+*.pem
+*.key
+*.crt
+
+# Local development tools / debugger files
+*.local
+*.cache/
+*.swp
+*.swo
+
+# Prettier / ESLint caches
+.prettiercache
+.eslintcache
+
+# Optional: Coverage or Debug tools (exemplo do Jest)
+jest.config.js
+jest.config.ts
