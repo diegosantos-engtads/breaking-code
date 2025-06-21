@@ -1,12 +1,25 @@
+import clsx from 'clsx';
 import Link from 'next/link';
+import { Container } from '../Container';
 
 export const Footer = () => {
-  const linkClasses =
-    'inline-block text-[#123] font-medium after:block after:w-0 after:h-[1px] after:bg-neutral-500 after:transition-all after:duration-400 after:ease-in-out hover:after:w-full';
+  const linkClasses = clsx(
+    'inline-block',
+    'text-text-3',
+    'font-medium',
+    'after:block',
+    'after:w-0',
+    'after:h-[1px]',
+    'after:bg-background-3',
+    'after:transition-all',
+    'after:duration-400',
+    'after:ease-in-out',
+    'hover:after:w-full',
+  );
 
   return (
-    <footer className='flex justify-center'>
-      <small className='my-10 text-center px-8 text-sm'>
+    <footer>
+      <Container className='text-center text-sm'>
         Criado por{' '}
         <Link
           href='https://github.com/diegosantos-engtads'
@@ -20,7 +33,7 @@ export const Footer = () => {
           Breaking Code
         </Link>{' '}
         – Todos os direitos reservados.
-      </small>
+      </Container>
     </footer>
   );
 };

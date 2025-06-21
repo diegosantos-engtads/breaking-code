@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+:root {
+  /* Backgrounds - Light Mode */
+  --background-1: #e9e9e9;
+  --background-2: #f0f0f0;
+  --background-3: #123;
+
+  /* Text Colors - Light Mode */
+  --text-1: #191919;
+  --text-2: #333333;
+  --text-3: #123;
+
+  /* Font defaults */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-1: #161616;
+    --background-2: #1f1f1f;
+    --background-3: #ffffff;
+
+    --text-1: #dbdbdb;
+    --text-2: #cccccc;
+    --text-3: #ffffff;
   }
 }
 
+@theme inline {
+  --color-background-1: var(--background-1);
+  --color-background-2: var(--background-2);
+  --color-background-3: var(--background-3);
+
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--background-1);
+  color: var(--text-1);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-1 { background-color: var(--background-1); }
+.bg-2 { background-color: var(--background-2); }
+.bg-3 { background-color: var(--background-3); }
+
+.text-1 { color: var(--text-1); }
+.text-2 { color: var(--text-2); }
+.text-3 { color: var(--text-3); }
+
+h1 {
+  @apply font-bold;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+h2 {
+  @apply font-bold;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
