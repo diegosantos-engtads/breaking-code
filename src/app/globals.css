@@ -9,7 +9,7 @@
 
   /* Text Colors - Light Mode */
   --text-1: #191919;
-  --text-2: #333333;
+  --text-2: #45556c;
   --text-3: #123;
 
   /* Font defaults */
@@ -24,7 +24,7 @@
     --background-3: #ffffff;
 
     --text-1: #dbdbdb;
-    --text-2: #cccccc;
+    --text-2: #45556c;
     --text-3: #ffffff;
   }
 }
@@ -42,7 +42,7 @@
 body {
   background-color: var(--background-1);
   color: var(--text-1);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), sans-serif;
 }
 
 .bg-1 { background-color: var(--background-1); }
@@ -52,6 +52,14 @@ body {
 .text-1 { color: var(--text-1); }
 .text-2 { color: var(--text-2); }
 .text-3 { color: var(--text-3); }
+
+
+
+
+.clamp-h1 {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+
 
 h1 {
   @apply font-bold;

@@ -3,17 +3,12 @@ import clsx from 'clsx';
 type ContainerProps = {
   children: React.ReactNode;
   className?: string;
-  externalClassName?: string;
 };
 
-export const Container = ({
-  children,
-  className,
-  externalClassName,
-}: ContainerProps) => {
+export const Container = ({ children, className }: ContainerProps) => {
   return (
-    <div className={clsx('max-w-5xl', 'flow-root', externalClassName)}>
-      <div className={clsx('m-6', className)}>{children}</div>
+    <div className={clsx('p-6 mx-auto max-w-6xl flow-root', className)}>
+      {children}
     </div>
   );
 };

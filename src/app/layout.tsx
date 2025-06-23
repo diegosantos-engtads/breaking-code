@@ -1,18 +1,13 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import clsx from 'clsx';
+import './globals.css';
 import { Main } from '@/components/Main';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import type { Metadata } from 'next';
+import { Roboto } from 'next/font/google';
+import clsx from 'clsx';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const roboto = Roboto({
+  variable: '--font-roboto',
   subsets: ['latin'],
 });
 
@@ -29,12 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body
-        className={clsx(
-          'bg-amber-50',
-          `${geistSans.variable} ${geistMono.variable} antialiased`,
-        )}
-      >
+      <body className={clsx('bg-background-1 antialiased', roboto.variable)}>
         <Main>
           <Header />
           {children}

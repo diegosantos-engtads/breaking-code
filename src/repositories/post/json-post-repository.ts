@@ -15,6 +15,7 @@ const JSON_POST_POST_PATH = resolve(
 const SIMULATE_WAIT_IN_MS = 0;
 
 export class JsonPostyRepository implements PostRepository {
+
   private async simulateWait() {
     if (SIMULATE_WAIT_IN_MS <= 0) return;
     await new Promise(resolve => setTimeout(resolve, SIMULATE_WAIT_IN_MS));
