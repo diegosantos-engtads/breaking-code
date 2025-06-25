@@ -13,7 +13,7 @@ export const PostHeading = ({
 }: PostHeadingProps) => {
   return (
     <TagH>
-      <Link href={url}>{children}</Link>
+      <Link href={url} className='hover:text-text-2 transition'>{children}</Link>
     </TagH>
   );
 };

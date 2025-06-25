@@ -1,15 +1,14 @@
 import clsx from 'clsx';
 
 export const SpinLoader = () => {
-  const clAses = clsx('flex', 'items-center', 'justify-center');
   return (
-    <span className={clAses}>
-      <span
+    <div className='flex flex-1 h-full items-center justify-center'>
+      <div
         className={clsx(
-          'p-4.5',
+          'p-4.5 ',
           'border-2 border-t-transparent rounded-full border-[#123] animate-spin',
         )}
-      ></span>
-    </span>
+      ></div>
+    </div>
   );
 };

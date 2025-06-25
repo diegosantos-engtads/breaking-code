@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import clsx from 'clsx';
+import { Container } from '@/components/Container';
 
 const roboto = Roboto({
   variable: '--font-roboto',
@@ -12,7 +13,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Breaking Code',
+  title: {
+    template: '%s | Breaking Code',
+    default: 'Breaking Code',
+  },
   description:
     'Novidades de tecnologias, conhecimento e notícias sobre o mundo dev.',
 };
@@ -27,7 +31,7 @@ export default function RootLayout({
       <body className={clsx('bg-background-1 antialiased', roboto.variable)}>
         <Main>
           <Header />
-          {children}
+          <Container>{children}</Container>
           <Footer />
         </Main>
       </body>
