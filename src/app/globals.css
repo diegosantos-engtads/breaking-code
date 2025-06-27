@@ -54,18 +54,19 @@ body {
 .text-3 { color: var(--text-3); }
 
 
-
-
 .clamp-h1 {
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-size: clamp(1.9rem, 5vw, 2.2rem);
+}
+.clamp-h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.1rem);
 }
 
 
 h1 {
   @apply font-bold;
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-size: clamp(1.1rem, 3.8vw, 1.8rem);
 }
 h2 {
   @apply font-bold;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(1.0rem, 2.5vw, 1.1rem);
 }
