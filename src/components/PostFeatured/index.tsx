@@ -10,8 +10,8 @@ export const PostFeatured = async () => {
   return (
     <section
       className={clsx(
-        'group grid md:grid-cols-2 gap-6',
-        'sm:grid-cols-2 mb-14',
+        'group grid md:grid-cols-2 gap-2',
+        'sm:grid-cols-2 sm:gap-6 mb-14',
       )}
     >
       <PostCoverImage
