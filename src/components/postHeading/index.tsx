@@ -21,7 +21,7 @@ export const PostHeading = ({
       <Link
         href={url}
         className={clsx(
-          !disableHover && 'hover:text-text-2 transition',
+          !disableHover && 'hover:text-text-2 hover:underline transition',
           className
         )}
       >
