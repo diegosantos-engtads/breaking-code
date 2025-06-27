@@ -2,6 +2,7 @@ import { findPostBySlugCached } from '@/lib/post/queries';
 import { notFound } from 'next/navigation';
 import { PostCoverImage } from '../PostCoverImage';
 import { PostSummary } from '../PostSummary';
+import { SafeMarkdown } from '../SafeMarkdown';
 
 type SinglePostProps = {
   slug: string;
@@ -14,7 +15,7 @@ export const SinglePost = async ({ slug }: SinglePostProps) => {
 
   return (
     <article>
-      <header>
+      <section>
         <PostCoverImage
           imageProps={{
             width: 1200,
@@ -27,14 +28,14 @@ export const SinglePost = async ({ slug }: SinglePostProps) => {
         />
         <PostSummary
           post={post}
-          className='mt-2 mb-12 cursor-auto'
+          className='m-2 mb-12 sm:mb-16 gap-2'
           headingAs='h1'
+          headingClass='cursor-auto'
           disableLink
         />
-      </header>
-      <section className='bg-background-2 rounded-md p-6'>
-        {post.content}
       </section>
+
+      <SafeMarkdown markdown={post.content} />
     </article>
   );
 };
