@@ -1,5 +1,6 @@
 import { formatRelativeDate, getFormattedDate } from '@/utils/format-datetime';
 import { PostHeading } from '../PostHeading';
+import clsx from 'clsx';
 
 type PostSummaryProps = {
   post: {
@@ -10,14 +11,29 @@ type PostSummaryProps = {
     slug: string;
     author: string;
   };
+  headingAs?: 'h1' | 'h2' | 'h3';
+  headingClass?: string;
+  disableLink?: boolean;
+  className?: string;
 };
 
-export const PostSummary = ({ post }: PostSummaryProps) => {
+export const PostSummary = ({
+  post,
+  headingAs = 'h2',
+  headingClass,
+  disableLink,
+  className,
+}: PostSummaryProps) => {
   return (
-    <div className='flex flex-col justify-center gap-4'>
+    <div
+      className={clsx(
+        'text-left flex flex-col justify-center gap-2',
+        className,
+      )}
+    >
       <small>
         {post.author}
-        {' - '}
+        {' | '}
         <time
           dateTime={post.createdAt}
           title={formatRelativeDate(post.createdAt)}
@@ -27,11 +43,16 @@ export const PostSummary = ({ post }: PostSummaryProps) => {
         </time>
       </small>
 
-      <PostHeading url={`/post/${post.slug}`} as='h2'>
+      <PostHeading
+        url={`/post/${post.slug}`}
+        as={headingAs}
+        className={headingClass}
+        disableHover={disableLink}
+      >
         {post.title}
       </PostHeading>
 
-      <p className='z-10'>{post.excerpt}</p>
+      <p>{post.excerpt}</p>
     </div>
   );
 };
