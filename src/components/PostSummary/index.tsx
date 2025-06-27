@@ -1,6 +1,6 @@
-import { formatRelativeDate, getFormattedDate } from '@/utils/format-datetime';
 import { PostHeading } from '../PostHeading';
 import clsx from 'clsx';
+import { PostDate } from '../PostDate';
 
 type PostSummaryProps = {
   post: {
@@ -34,13 +34,7 @@ export const PostSummary = ({
       <small>
         {post.author}
         {' | '}
-        <time
-          dateTime={post.createdAt}
-          title={formatRelativeDate(post.createdAt)}
-          className='text-text-2'
-        >
-          {getFormattedDate(post.createdAt)}
-        </time>
+        <PostDate dateTime={post.createdAt} />
       </small>
 
       <PostHeading
