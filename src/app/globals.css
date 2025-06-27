@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 
 :root {
   /* Backgrounds - Light Mode */
@@ -11,6 +11,12 @@
   --text-1: #191919;
   --text-2: #45556c;
   --text-3: #123;
+
+   --markText-1:#2b3442;/* OK */
+   --markText-2:#081017;
+   --markText-3: #123;
+
+   --markBack: #123;
 
   /* Font defaults */
   --font-sans: var(--font-geist-sans);
@@ -26,6 +32,12 @@
     --text-1: #dbdbdb;
     --text-2: #45556c;
     --text-3: #ffffff;
+
+    --markText-1:#d5d7db;/* OK */
+    --markText-2:#d9dcde;
+    --markText-3: #f3f3f3;
+
+    --markBack: #123;
   }
 }
 
@@ -45,21 +57,71 @@ body {
   font-family: var(--font-roboto), sans-serif;
 }
 
-.bg-1 { background-color: var(--background-1); }
-.bg-2 { background-color: var(--background-2); }
-.bg-3 { background-color: var(--background-3); }
-
-.text-1 { color: var(--text-1); }
-.text-2 { color: var(--text-2); }
-.text-3 { color: var(--text-3); }
-
-
 .clamp-h1 {
   font-size: clamp(1.9rem, 5vw, 2.2rem);
 }
 .clamp-h2 {
   font-size: clamp(1.2rem, 2.5vw, 1.1rem);
 }
+
+.m-h2 {
+  font-size: clamp(1.4rem, 3.8vw, 1.6rem);
+  color: var(--markText-1);
+}
+
+.m-h3, .m-p {
+  color: var(--markText-2);
+}
+
+.m-h3 {
+  font-size: clamp(1.2rem, 3.8vw, 1.4rem);
+}
+
+.m-p {
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+}
+
+.m-a {
+  color: var(--markText-3);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all;
+
+}
+.m-a:hover{
+  text-decoration: underline;
+  opacity: 90%;
+}
+
+ul li,
+td code,
+th code,
+p code,
+td strong,
+strong,
+td {
+  color: var(--markText-3);
+}
+
+td code {
+  font-weight: 600;
+}
+
+code {
+  text-decoration: none;
+}
+
+ul li {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
 
 
 h1 {
@@ -69,4 +131,8 @@ h1 {
 h2 {
   @apply font-bold;
   font-size: clamp(1.0rem, 2.5vw, 1.1rem);
+}
+h3 {
+  @apply font-bold;
+  font-size: clamp(0.9rem, 2.5vw, 1.0rem);
 }
