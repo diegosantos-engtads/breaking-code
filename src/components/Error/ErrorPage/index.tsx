@@ -1,4 +1,5 @@
-import { ErrorMessage } from '@/components/ErrorMessage';
+'use client';
+import { ErrorMessage } from '@/components/Error/ErrorMessage';
 import { ButtonError } from '../ButtonError';
 
 export type ErrorPageProps = {
