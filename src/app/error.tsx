@@ -1,7 +1,12 @@
 'use client';
 import ErrorPage from '@/components/ErrorPage';
 
-const GlobalError = ({ error, reset }: { error: Error; reset: () => void }) => {
+type GlobalErrorProps = {
+  error: Error;
+  reset: () => void;
+};
+
+const GlobalError = ({ error, reset }: GlobalErrorProps) => {
   return (
     <ErrorPage
       error={error}
