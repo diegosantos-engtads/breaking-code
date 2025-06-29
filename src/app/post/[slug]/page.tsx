@@ -26,6 +26,8 @@ export const generateMetadata = async ({
 };
 
 const PostPage = async ({ params }: PostSlugPageProps) => {
+  throw new Error('gfdgfdgfdgfdg');
+
   const slug = (await params).slug;
 
   return (

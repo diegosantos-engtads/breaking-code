@@ -1,10 +1,11 @@
-const NotFound = () => {
-  return (
-    <>
-      <title>ERROO 404 | Breaking Code</title>
-      <div>ERROO 404</div>
-    </>
-  );
-};
+import ErrorPage from '@/components/ErrorPage';
 
-export default NotFound;
+export default function NotFound() {
+  return (
+    <ErrorPage
+      errorTitle='Página não encontrada'
+      errorContentTitle='Erro 404'
+      errorContent='A página que você procura não existe ou foi removida.'
+    />
+  );
+}

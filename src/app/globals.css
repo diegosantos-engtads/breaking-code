@@ -12,7 +12,9 @@
   --text-2: #45556c;
   --text-3: #123;
 
-   --markText-1:#2b3442;/* OK */
+  --text-4:#fff;
+
+   --markText-1:#2b3442;
    --markText-2:#081017;
    --markText-3: #123;
 
@@ -33,7 +35,7 @@
     --text-2: #45556c;
     --text-3: #ffffff;
 
-    --markText-1:#d5d7db;/* OK */
+    --markText-1:#d5d7db;
     --markText-2:#d9dcde;
     --markText-3: #f3f3f3;
 
@@ -49,6 +51,7 @@
   --color-text-1: var(--text-1);
   --color-text-2: var(--text-2);
   --color-text-3: var(--text-3);
+  --color-text-4: var(--text-4)
 }
 
 body {
@@ -56,6 +59,9 @@ body {
   color: var(--text-1);
   font-family: var(--font-roboto), sans-serif;
 }
+
+
+/* Styling for Markdown */
 
 .clamp-h1 {
   font-size: clamp(1.9rem, 5vw, 2.2rem);
@@ -69,12 +75,13 @@ body {
   color: var(--markText-1);
 }
 
-.m-h3, .m-p {
+.m-p {
   color: var(--markText-2);
 }
 
 .m-h3 {
   font-size: clamp(1.2rem, 3.8vw, 1.4rem);
+  color: var(--markText-1);
 }
 
 .m-p {
@@ -85,12 +92,12 @@ body {
   color: var(--markText-3);
   font-weight: bold;
   text-decoration: none;
-  transition: all;
-
+  transition: opacity 3.5s ease, text-decoration-color 0.3s ease;
 }
-.m-a:hover{
+
+.m-a:hover {
   text-decoration: underline;
-  opacity: 90%;
+  opacity: 0.9;
 }
 
 ul li,
@@ -101,6 +108,7 @@ td strong,
 strong,
 td {
   color: var(--markText-3);
+  opacity: 90%;
 }
 
 td code {
@@ -114,14 +122,7 @@ code {
 ul li {
   text-decoration: underline;
 }
-
-
-
-
-
-
-
-
+/* <--------------------- */
 
 
 h1 {
