@@ -8,7 +8,6 @@ const HomePage = async () => {
     <>
       <Suspense fallback={<SpinLoader />}>
         <PostFeatured />
-
         <PostsList />
       </Suspense>
     </>
