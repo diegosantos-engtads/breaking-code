@@ -23,8 +23,11 @@ db.sqlite3
 *.sqlite
 *.sqlite-journal
 
-# Drizzle ORM metadata
+# Drizzle ORM
+drizzle.config.js
+src/db/drizzle/migrations/
 src/db/drizzle/migrations/meta/
+# NOTE: schemas.ts não é ignorado pois foi escrito à mão
 
 # TypeScript
 *.tsbuildinfo
@@ -33,6 +36,9 @@ next-env.d.ts
 # Test coverage
 /coverage/
 
+# Deprecated/legacy files
+src/repositories/__deprecated__/
+
 # Environment variables
 .env
 .env.local
@@ -40,8 +46,6 @@ next-env.d.ts
 .env.test
 .env.production
 .env.*
-
-# Permitir apenas o .env.example como modelo
 !.env.example
 
 # Vercel deployment folder
@@ -76,6 +80,6 @@ Thumbs.db
 .prettiercache
 .eslintcache
 
-# Optional: Coverage or Debug tools (exemplo do Jest)
+# Optional: Coverage or Debug tools (Jest configs)
 jest.config.js
 jest.config.ts
