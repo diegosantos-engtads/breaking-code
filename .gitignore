@@ -27,7 +27,6 @@ db.sqlite3
 drizzle.config.js
 src/db/drizzle/migrations/
 src/db/drizzle/migrations/meta/
-# NOTE: schemas.ts não é ignorado pois foi escrito à mão
 
 # TypeScript
 *.tsbuildinfo
