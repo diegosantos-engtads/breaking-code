@@ -1,8 +1,10 @@
-import { findPostBySlugCached } from '@/lib/post/queries';
+import { findPublicPostBySlugCached } from '@/lib/post/queries/public';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { SinglePost } from '@/components/SinglePost';
 import { SpinLoader } from '@/components/SpinLoader';
+
+export const dynamic = 'force-dynamic';
 
 type PostSlugPageProps = {
   params: Promise<{ slug: string }>;
@@ -12,7 +14,7 @@ export const generateMetadata = async ({
   params,
 }: PostSlugPageProps): Promise<Metadata> => {
   const slug = (await params).slug;
-  const post = await findPostBySlugCached(slug);
+  const post = await findPublicPostBySlugCached(slug);
 
   if (!post) {
     return {

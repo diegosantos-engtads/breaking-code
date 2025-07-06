@@ -6,7 +6,7 @@ export const SpinLoader = () => {
       <div
         className={clsx(
           'p-4.5 ',
-          'border-2 border-t-transparent rounded-full border-[(--text-3)]',
+          'border-2 border-t-transparent rounded-full border-[(--text-3)] animate-spin',
         )}
       ></div>
     </div>
