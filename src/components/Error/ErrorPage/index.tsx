@@ -18,7 +18,7 @@ const ErrorPage = ({
   reset,
 }: ErrorPageProps) => {
   return (
-    <div className='bg-background-3 flex flex-col items-center justify-center gap-12 p-8 rounded'>
+    <div className='bg-background-3 flex flex-col items-center justify-center gap-12 p-8 rounded max-w-2xl m-auto'>
       <ErrorMessage
         pageTitle={errorTitle}
         contentTitle={errorContentTitle}

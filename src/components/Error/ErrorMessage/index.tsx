@@ -16,7 +16,7 @@ export const ErrorMessage = ({
     <>
       <title>{pageTitle}</title>
       <div className={className}>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-4'>
           <h1>{pageTitle}</h1>
           <h2>{contentTitle}</h2>
           <p>{content}</p>

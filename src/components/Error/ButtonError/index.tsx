@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { ButtonConfirm } from '@/components/ButtonConfirm'; // ajuste o caminho conforme estrutura
 
 export type ButtonErrorProps = {
   error?: Error;
@@ -14,22 +15,16 @@ export const ButtonError = ({ error, reset }: ButtonErrorProps) => {
   }, [error]);
 
   return (
-    <div className='flex gap-4'>
+    <div className='flex gap-6'>
       {reset && (
-        <button
-          type='button'
-          onClick={reset}
-          className='bg-background-1 p-2 rounded hover:opacity-70 transition cursor-pointer shadow-text-1'
-        >
+        <ButtonConfirm onClick={reset} className='bg-background-2 px-26'>
           Tentar novamente
-        </button>
+        </ButtonConfirm>
       )}
-      <Link
-        href='/'
-        className='bg-background-1 p-2 rounded hover:opacity-70 transition cursor-pointer shadow-text-1'
-      >
-        Retornar para Home Page
-      </Link>
+
+      <ButtonConfirm className='bg-background-2/90 px-26'>
+        <Link href='/'>Retornar para Home Page</Link>
+      </ButtonConfirm>
     </div>
   );
 };
