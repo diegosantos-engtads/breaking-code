@@ -2,9 +2,20 @@ import { findAllPostAdmin } from '@/lib/post/queries/admin';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { DeletePostButton } from '../DeletePostButton';
+import ErrorPage from '@/components/Error/ErrorPage';
 
 export const PostsListAdmin = async () => {
   const posts = await findAllPostAdmin();
+
+  if (posts.length <= 0)
+    return (
+      <ErrorPage
+        errorTitle='Breaking Code'
+        errorContentTitle='Oops! Ainda não Publicaram nada'
+        errorContent='Bora colocar a mão na massa'
+      />
+    );
+
   return (
     <section className='flex flex-col gap-2.5 '>
       {posts.map(post => {

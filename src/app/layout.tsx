@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     'Novidades de tecnologias, conhecimento e notícias sobre o mundo dev.',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang='pt-BR'>
       <body className={clsx('bg-background-1 antialiased', roboto.variable)}>
@@ -37,4 +37,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

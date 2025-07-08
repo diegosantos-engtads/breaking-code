@@ -5,6 +5,7 @@ import { Dialog } from '@/components/Dialog';
 import clsx from 'clsx';
 import { Trash2Icon } from 'lucide-react';
 import { useState, useTransition } from 'react';
+import { toast } from 'react-toastify';
 
 type DeletePostButtonProps = {
   id: string;
@@ -22,8 +23,11 @@ export const DeletePostButton = ({ id, title }: DeletePostButtonProps) => {
   const handleConfirm = () => {
     startTransition(async () => {
       const result = await deletePost(id);
-      alert(result);
-      setShowDialog(false);
+      if (result.error) {
+        toast.error(result.error);
+        return;
+      }
+      toast.success('Post Apagado');
     });
   };
 

@@ -1,8 +1,8 @@
 'use client';
 type ErrorMessageProps = {
-  pageTitle: string;
-  contentTitle: string;
-  content: React.ReactNode;
+  pageTitle?: string;
+  contentTitle?: string;
+  content?: React.ReactNode;
   className?: string;
 };
 
@@ -14,6 +14,7 @@ export const ErrorMessage = ({
 }: ErrorMessageProps) => {
   return (
     <>
+      {pageTitle && <title>{pageTitle}</title>}
       <title>{pageTitle}</title>
       <div className={className}>
         <div className='flex flex-col gap-4'>

@@ -9,9 +9,11 @@ export const Header = () => {
       <Container>
         <Link
           href='/'
-          className={clsx('flex items-center gap-2.5 clamp-h1 font-medium')}
+          className={clsx(
+            'inline-flex items-center gap-2.5 clamp-h1 font-medium',
+          )}
         >
-          <Bug size={32} strokeWidth={2} className='flex' />
+          <Bug size={32} className='flex' />
           Breaking Code
         </Link>
         <h2>Conhecimento e notícias sobre o mundo dev.</h2>
