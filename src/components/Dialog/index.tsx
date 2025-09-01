@@ -86,7 +86,7 @@ export const Dialog = ({
 
         <div className='flex justify-center gap-10 pt-2'>
           <ButtonConfirm
-            className='bg-background-3/80 text-text-4 disabled:opacity-20 disabled:cursor-not-allowed'
+            variant='cancel'
             onClick={cancelAction}
             disabled={disabled}
             ref={cancelButtonRef}
@@ -94,7 +94,7 @@ export const Dialog = ({
             Cancelar
           </ButtonConfirm>
           <ButtonConfirm
-            className='bg-background-3 text-text-4 disabled:opacity-20 disabled:cursor-not-allowed'
+            variant='confirm'
             onClick={confirmAction}
             disabled={disabled}
           >
