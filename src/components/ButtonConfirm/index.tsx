@@ -8,10 +8,13 @@ type ButtonConfirmProps = {
   type?: 'button' | 'submit' | 'reset';
   autoFocus?: boolean;
   disabled?: boolean;
-  variant: 'cancel' | 'confirm' | 'submit' | 'reset';
+  variant: 'cancel' | 'confirm' | 'submit' | 'reset' | 'delete' | 'ok';
 };
 
-export const ButtonConfirm = forwardRef<HTMLButtonElement, ButtonConfirmProps>(
+export const ButtonConfirm = forwardRef<
+  HTMLButtonElement,
+  ButtonConfirmProps
+>(
   (
     {
       children,
@@ -31,17 +34,16 @@ export const ButtonConfirm = forwardRef<HTMLButtonElement, ButtonConfirmProps>(
       'hover:opacity-85',
       'cursor-pointer',
       'transition-all',
+      'text-text-4',
+      'disabled:opacity-20 ',
+      'disabled:cursor-not-allowed',
     );
 
     const variantClass = clsx({
-      'bg-background-3/80 text-text-4 disabled:opacity-20 disabled:cursor-not-allowed':
-        variant === 'cancel',
-
-      'bg-background-3 text-text-4 disabled:opacity-20 disabled:cursor-not-allowed':
-        variant === 'confirm',
-
-      'bg-[red] text-text-4 disabled:opacity-20 disabled:cursor-not-allowed':
-        variant === 'reset',
+      'bg-background-3/80  ': variant === 'cancel',
+      'bg-background-3  ': variant === 'confirm',
+      'bg-[red]  ': variant === 'delete',
+      'bg-[#004cff]  ': variant === 'ok',
     });
 
     return (
@@ -53,7 +55,16 @@ export const ButtonConfirm = forwardRef<HTMLButtonElement, ButtonConfirmProps>(
         disabled={disabled}
         className={clsx(defaultClass, variantClass, className)}
       >
-        <span className='absolute'>{children}</span>
+        <span
+          className={clsx(
+            'absolute',
+            'flex',
+            'gap-1',
+            '[&_svg]:p-[2.8%]',
+          )}
+        >
+          {children}
+        </span>
       </button>
     );
   },

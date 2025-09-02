@@ -1,15 +1,44 @@
-import { ButtonConfirm } from '@/components/ButtonConfirm';
+// import { ButtonConfirm } from '@/components/ButtonConfirm';
+// import { BanIcon, BugIcon, CheckIcon, DeleteIcon } from 'lucide-react';
+
+import { InputText } from '@/components/InputText';
 
 export const dynamic = 'force-dynamic';
 
 const AdminPostNewPage = async () => {
   return (
     <>
-      <h1>Admin Post Page</h1>
+      <div className='flex flex-col gap-6'>
+        <InputText
+          labelText='Nome'
+          id=''
+          placeholder='Digite seu nome'
+        />
+        <InputText
+          labelText='Sobrenome'
+          id=''
+          placeholder='Digite seu sobrenome'
+          disabled
+        />
+        <InputText
+          labelText='Sobrenome'
+          id=''
+          placeholder='Digite seu sobrenome'
+          readOnly
+        />
 
-      <div className='flex justify-center gap-10 pt-2'>
-        <ButtonConfirm variant='cancel'>Cancelar</ButtonConfirm>
-        <ButtonConfirm variant='reset'>Confirmar</ButtonConfirm>
+        {/* <ButtonConfirm variant='confirm'>
+          <BugIcon /> Confirmar
+        </ButtonConfirm>
+        <ButtonConfirm variant='cancel'>
+          <BanIcon /> Cancelar
+        </ButtonConfirm>
+        <ButtonConfirm variant='ok'>
+          <CheckIcon /> Ok
+        </ButtonConfirm>
+        <ButtonConfirm variant='delete'>
+          <DeleteIcon /> Apagar
+        </ButtonConfirm> */}
       </div>
     </>
   );
