@@ -1,6 +1,6 @@
-import { PostHeading } from '../PostHeading';
 import clsx from 'clsx';
 import { PostDate } from '../PostDate';
+import { PostHeading } from '../PostHeading';
 
 type PostSummaryProps = {
   post: {
