@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect } from 'react';
-import { ButtonConfirm } from '@/components/ButtonConfirm'; // ajuste o caminho conforme estrutura
+import { useRouter } from 'next/navigation';
+import { ButtonConfirm } from '@/components/ButtonConfirm';
 
 export type ButtonErrorProps = {
   error?: Error;
@@ -10,6 +10,8 @@ export type ButtonErrorProps = {
 };
 
 export const ButtonError = ({ error, reset }: ButtonErrorProps) => {
+  const router = useRouter();
+
   useEffect(() => {
     if (error) console.error(error);
   }, [error]);
@@ -17,13 +19,21 @@ export const ButtonError = ({ error, reset }: ButtonErrorProps) => {
   return (
     <div className='flex gap-6'>
       {reset && (
-        <ButtonConfirm onClick={reset} className='bg-background-2 px-26'>
+        <ButtonConfirm
+          variant='cancel'
+          className='px-6'
+          onClick={reset}
+        >
           Tentar novamente
         </ButtonConfirm>
       )}
 
-      <ButtonConfirm className='bg-background-2/90 px-26'>
-        <Link href='/'>Retornar para Home Page</Link>
+      <ButtonConfirm
+        variant='cancel'
+        className='px-8 py-3'
+        onClick={() => router.push('/')}
+      >
+        Retornar para Home Page
       </ButtonConfirm>
     </div>
   );
